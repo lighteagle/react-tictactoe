@@ -17,7 +17,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: true // const [isOpen, setIsOpen] = useState(false);
+      isOpen: false // const [isOpen, setIsOpen] = useState(false);
     };
   }
 
@@ -30,30 +30,25 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <Navbar color="light" light expand="md" fixed="top">
+          <NavbarBrand href="/">Shine Corps</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                <NavLink
+                  href="https://github.com/lighteagle/react-tictactoe"
+                  target="_blank"
+                >
+                  Check code on my GitHub
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="#game-tic">Tic tac toe</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#todo">Todo's List</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
