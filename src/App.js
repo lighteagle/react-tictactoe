@@ -9,6 +9,7 @@ const Header = styled.h1`
   text-align: center;
   background: #000;
   color: #fff;
+  margin-bottom: 20px;
 `;
 
 const Wrapper = styled.section`
