@@ -55,3 +55,7 @@ ul {
 .game-info {
   margin-left: 20px;
 }
+
+.btn-move {
+  width: 200px
+}

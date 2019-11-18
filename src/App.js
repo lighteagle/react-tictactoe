@@ -10,6 +10,8 @@ const Header = styled.h1`
   background: #000;
   color: #fff;
   margin-bottom: 20px;
+
+  font-family: "Damion", cursive;
 `;
 
 const Wrapper = styled.section`
@@ -29,7 +31,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Wrapper light>
-        <Header> My TicTacToe</Header>
+        <Header> My Tic-Tac-Toe</Header>
         <Game />
       </Wrapper>
       <Section dark> Simple, Easy and Fun</Section>
