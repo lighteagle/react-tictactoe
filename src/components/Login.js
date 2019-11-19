@@ -14,10 +14,9 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <p>You must log in to view the page at {from.pathname}</p>
-      <button onClick={login}>Log in</button>
-    </div>
+    <span className="menu-click" onClick={login}>
+      {!fakeAuth.isAuthenticated && "Log in"}
+    </span>
   );
 }
 

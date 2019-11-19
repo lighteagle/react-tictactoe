@@ -10,7 +10,6 @@ import {
   FormText
 } from "reactstrap";
 
-
 class Todo extends Component {
   constructor(props) {
     super(props);

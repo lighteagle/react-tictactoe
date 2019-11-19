@@ -6,18 +6,19 @@ function AuthButton() {
   let history = useHistory();
 
   return fakeAuth.isAuthenticated ? (
-    <p>
-      Welcome!{" "}
-      <button
+    <span>
+      Welcome, Guest!{" "}
+      <span
+        className="menu-click"
         onClick={() => {
           fakeAuth.signout(() => history.push("/"));
         }}
       >
         Sign out
-      </button>
-    </p>
+      </span>
+    </span>
   ) : (
-    <p>You are not logged in.</p>
+    " "
   );
 }
 

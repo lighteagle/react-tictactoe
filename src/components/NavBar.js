@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import {
   Collapse,
   Navbar,
@@ -6,12 +8,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 } from "reactstrap";
+
+import Login from "./Login";
+import AuthButton from "./AuthButton";
 
 class NavBar extends Component {
   constructor(props) {
@@ -36,18 +37,18 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink
-                  href="https://github.com/lighteagle/react-tictactoe"
-                  target="_blank"
-                >
-                  Check code on my GitHub
-                </NavLink>
+                <Link to="/">Home</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#game-tic">Tic tac toe</NavLink>
+                <Link to="/tictactoe">Tic Tac Toe </Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#todo">Todo's List</NavLink>
+                <Link to="/todo">Todo</Link>
+              </NavItem>
+
+              <NavItem>
+                <AuthButton />
+                <Login />
               </NavItem>
             </Nav>
           </Collapse>

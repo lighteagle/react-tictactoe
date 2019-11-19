@@ -73,3 +73,21 @@ ul {
   font-size: 30px;
   height: 40px
 }
+
+.menu-click {
+  cursor: pointer;
+  color: blue;
+}
+
+.nav-item {
+  padding: 2px;
+}
+
+.nav-item:hover {
+  color: black;
+}
+
+.home-page {
+  background-image: url("./images/1.jpg");
+  height: 100vh;
+}
