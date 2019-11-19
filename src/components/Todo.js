@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 
-import {
-  Alert,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText
-} from "reactstrap";
+import { Alert, Form, FormGroup, Label, Input } from "reactstrap";
 
 class Todo extends Component {
   constructor(props) {
@@ -20,7 +12,7 @@ class Todo extends Component {
     };
   }
   handleTodoInput = event => {
-    console.log(event.target);
+    // console.log(event.target);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -32,7 +24,6 @@ class Todo extends Component {
       this.setState({ error: "input tidak boleh kosong" });
       return;
     }
-
     const todos = this.state.todos.slice();
     const todosObj = {};
     todosObj["id"] = this.state.todos.length + 1;
@@ -41,6 +32,21 @@ class Todo extends Component {
 
     todos.push(todosObj);
     this.setState({ todos, inputValue: "", error: "" });
+  };
+
+  handleTodoDelete = event => {
+    event.preventDefault();
+    // console.log(typeof event.target.id);
+
+    // buat todos dari state -> filter != event.target.id
+
+    const todos = this.state.todos.filter(
+      x => x.id !== parseInt(event.target.id)
+    );
+    // console.log(todosBaru);
+
+    // update state.todos
+    this.setState({ todos });
   };
 
   render() {
@@ -63,8 +69,12 @@ class Todo extends Component {
                 <FormGroup check>
                   <Label check>
                     <Input type="checkbox" />
-                    {data.todo}
+                    {data.todo}{" "}
                   </Label>
+                  <button id={data.id} onClick={this.handleTodoDelete}>
+                    {" "}
+                    Delete{" "}
+                  </button>
                 </FormGroup>
               </li>
             ))}
