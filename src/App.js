@@ -1,10 +1,16 @@
 import React from "react";
+import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
+
 import "./App.css";
 
 import styled from "styled-components";
 import Game from "./components/Game";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
 import Todo from "./components/Todo";
+import PrivateRoute from "./components/PrivateRoute";
+import LoginPage from "./components/Login";
+import AuthButton from "./components/AuthButton";
 
 const Header = styled.h1`
   text-align: center;
@@ -34,19 +40,48 @@ const Section = styled(Wrapper)`
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Wrapper light id="game-tic">
-        <Header> My Tic-Tac-Toe</Header>
-        <Game />
-      </Wrapper>
-      <Wrapper light id="todo">
-        <Header> My Todo's</Header>
-        <Todo />
-      </Wrapper>
+    <BrowserRouter>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/tictactoe">Tic Tac Toe </Link>
+          </li>
+          <li>
+            <Link to="/todo">Todo</Link>
+          </li>
 
+          <li>
+            <Link to="/login">Login</Link>
+            <AuthButton />
+          </li>
+        </ul>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          ini Homepage
+        </Route>
+
+        <PrivateRoute exact path="/tictactoe">
+          <Wrapper light id="game-tic">
+            <Header> My Tic-Tac-Toe</Header>
+            <Game />
+          </Wrapper>
+        </PrivateRoute>
+        <PrivateRoute exact path="/todo">
+          <Wrapper light id="todo">
+            <Header> My Todo's</Header>
+            <Todo />
+          </Wrapper>
+        </PrivateRoute>
+        <Route>
+          <LoginPage />
+        </Route>
+      </Switch>
       <Section dark> Simple, Easy and Fun</Section>
-    </div>
+    </BrowserRouter>
   );
 }
 
