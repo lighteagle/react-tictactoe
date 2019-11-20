@@ -40,6 +40,7 @@ class RestApi extends Component {
     return (
       <div>
         <h1>Dummy Data from JSONPlaceholder</h1>
+        <Link to={`/add-new-post`}>Add New Post</Link>
         <ul>
           {posts &&
             posts.map((data, index) => (

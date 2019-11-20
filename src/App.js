@@ -8,8 +8,8 @@ import Game from "./components/Game";
 import Todo from "./components/Todo";
 import RestApi from "./components/RestApi";
 import PostDetail from "./components/PostDetail";
-
 import PrivateRoute from "./components/PrivateRoute";
+import AddNewPost from "./components/AddNewPost";
 
 const Header = styled.h1`
   text-align: center;
@@ -60,6 +60,13 @@ function App() {
           <Wrapper light id="game-tic">
             <Header> Learn REST API</Header>
             <PostDetail />
+          </Wrapper>
+        </Route>
+
+        <Route path="/add-new-post">
+          <Wrapper light id="game-tic">
+            <Header> Learn REST API</Header>
+            <AddNewPost />
           </Wrapper>
         </Route>
 
