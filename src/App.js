@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Navbar from "./components/NavBar";
 import Game from "./components/Game";
 import Todo from "./components/Todo";
+import RestApi from "./components/RestApi";
+import PostDetail from "./components/PostDetail";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -47,13 +49,27 @@ function App() {
           <div className="home-page"></div>
         </Route>
 
-        <PrivateRoute exact path="/tictactoe">
+        <Route path="/rest-api">
+          <Wrapper light id="game-tic">
+            <Header> Learn REST API</Header>
+            <RestApi />
+          </Wrapper>
+        </Route>
+
+        <Route path="/post-detail/:id">
+          <Wrapper light id="game-tic">
+            <Header> Learn REST API</Header>
+            <PostDetail />
+          </Wrapper>
+        </Route>
+
+        <PrivateRoute path="/tictactoe">
           <Wrapper light id="game-tic">
             <Header> My Tic-Tac-Toe</Header>
             <Game />
           </Wrapper>
         </PrivateRoute>
-        <PrivateRoute exact path="/todo">
+        <PrivateRoute path="/todo">
           <Wrapper light id="todo">
             <Header> My Todo's</Header>
             <Todo />

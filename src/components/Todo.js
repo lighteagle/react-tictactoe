@@ -8,11 +8,11 @@ class Todo extends Component {
     this.state = {
       todos: [],
       inputValue: "",
-      error: ""
+      error: "",
+      isEdit: false
     };
   }
   handleTodoInput = event => {
-    // console.log(event.target);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -26,26 +26,20 @@ class Todo extends Component {
     }
     const todos = this.state.todos.slice();
     const todosObj = {};
-    todosObj["id"] = this.state.todos.length + 1;
+    todosObj["id"] = todos.length ? todos[todos.length - 1].id + 1 : 0;
     todosObj["todo"] = this.state.inputValue;
     todosObj["status"] = false;
 
     todos.push(todosObj);
     this.setState({ todos, inputValue: "", error: "" });
+    console.table(todos);
   };
 
   handleTodoDelete = event => {
     event.preventDefault();
-    // console.log(typeof event.target.id);
-
-    // buat todos dari state -> filter != event.target.id
-
     const todos = this.state.todos.filter(
       x => x.id !== parseInt(event.target.id)
     );
-    // console.log(todosBaru);
-
-    // update state.todos
     this.setState({ todos });
   };
 
