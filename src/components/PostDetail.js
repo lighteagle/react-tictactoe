@@ -41,10 +41,11 @@ class PostDetail extends Component {
     }
     return (
       <div>
-        <h1>
-          Dummy Data Detail from JSONPlaceholder, click{" "}
-          <Link to={`/rest-api`}>this</Link> to Rest API Home
-        </h1>
+        <h1> Dummy Data Detail from JSONPlaceholder </h1>
+        <p>
+          <Link to={`/rest-api`}>back to Rest API Home </Link>
+        </p>
+
         <div>
           <h3>
             [{postDetail.id}] : {postDetail.title.toUpperCase()}
