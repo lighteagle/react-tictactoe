@@ -39,6 +39,12 @@ class NavBar extends Component {
                 <Link to="/">Home</Link>
               </NavItem>
               <NavItem>
+                <Link to="/hook-todo">Hook Todo </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/counter">Counter </Link>
+              </NavItem>
+              <NavItem>
                 <Link to="/rest-api">REST API </Link>
               </NavItem>
               {/* <NavItem>

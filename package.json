@@ -40,7 +40,11 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "gh-pages": "^2.1.1"
   }
 }

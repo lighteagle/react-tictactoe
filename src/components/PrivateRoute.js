@@ -12,7 +12,7 @@ function PrivateRoute({ children, ...rest }) {
         ) : (
           <Redirect
             to={{
-               // sementara akses home ("/") kalau sudah ada login page buat jadi ("/login")
+              // sementara akses home ("/") kalau sudah ada login page buat jadi ("/login")
               pathname: "/",
               state: { from: location }
             }}

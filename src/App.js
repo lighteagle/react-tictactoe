@@ -10,6 +10,8 @@ import RestApi from "./components/RestApi";
 import PostDetail from "./components/PostDetail";
 import PrivateRoute from "./components/PrivateRoute";
 import AddNewPost from "./components/AddNewPost";
+import Counter from "./components/Counter";
+import HookTodo from "./components/HookTodo";
 
 const Header = styled.h1`
   text-align: center;
@@ -49,6 +51,19 @@ function App() {
           <div className="home-page"></div>
         </Route>
 
+        <Route path="/hook-todo">
+          <Wrapper light id="game-tic">
+            <Header> Learn Hook Todo</Header>
+            <HookTodo />
+          </Wrapper>
+        </Route>
+        <Route path="/counter">
+          <Wrapper light id="game-tic">
+            <Header> Learn counter</Header>
+            <Counter />
+          </Wrapper>
+        </Route>
+
         <Route path="/rest-api">
           <Wrapper light id="game-tic">
             <Header> Learn REST API</Header>
@@ -78,7 +93,7 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/todo">
           <Wrapper light id="todo">
-            <Header> My Todo's</Header>
+            <Header> My Todos</Header>
             <Todo />
           </Wrapper>
         </PrivateRoute>
